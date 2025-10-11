@@ -1,6 +1,7 @@
 import { Phone, Bot, Send, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import appScreenshot from "@/assets/app-screenshot-calls.png";
 
 const SolutionFlow = () => {
   const { t } = useLanguage();
@@ -72,11 +73,20 @@ const SolutionFlow = () => {
           ))}
         </div>
 
-        {/* Screenshot Placeholder */}
-        <div className="mt-16 p-8 rounded-xl bg-secondary/30 border-2 border-dashed border-primary/30">
-          <div className="text-center text-muted-foreground">
-            <p className="text-lg mb-2">{t('solution.demo')}</p>
-            <p className="text-sm">{t('solution.demoPlaceholder')}</p>
+        {/* App Screenshot */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-2">{t('solution.demo')}</h3>
+            <p className="text-muted-foreground">{t('solution.demoPlaceholder')}</p>
+          </div>
+          <div className="flex justify-center">
+            <div className="relative max-w-sm">
+              <img 
+                src={appScreenshot} 
+                alt="EdgeCrew Mobile App - Call Management Interface" 
+                className="rounded-2xl shadow-2xl border-4 border-border"
+              />
+            </div>
           </div>
         </div>
       </div>
