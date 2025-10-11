@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Building2, User, MessageSquare } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -18,24 +19,17 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.company) {
-      toast({
-        title: "Fehler",
-        description: "Bitte füllen Sie alle Pflichtfelder aus.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Success message
     toast({
-      title: "Vielen Dank!",
-      description: "Wir melden uns in Kürze bei Ihnen.",
+      title: t('contact.success'),
+      description: "",
     });
 
-    // Reset form
-    setFormData({ name: "", company: "", email: "", message: "" });
+    setFormData({
+      name: "",
+      company: "",
+      email: "",
+      message: ""
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,107 +44,85 @@ const ContactForm = () => {
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-12">
           <h2 className="mb-4">
-            Werden Sie unser <span className="text-primary">Pilotpartner</span>
+            {t('contact.title')} <span className="text-primary">{t('contact.titleAccent')}</span> {t('contact.titleEnd')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Speziell für Bauunternehmen in der Region Dresden
+            {t('contact.subtitle')}
           </p>
         </div>
 
-        <Card className="p-8 md:p-12 bg-card/50 backdrop-blur border-primary/30">
+        <Card className="p-8 bg-card border-border">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <User className="w-4 h-4 text-primary" />
-                  Name *
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                  {t('contact.name')}
                 </label>
                 <Input
+                  id="name"
                   name="name"
+                  type="text"
+                  required
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Max Mustermann"
-                  className="bg-background/50 border-border focus:border-primary"
-                  required
+                  className="bg-background border-border"
                 />
               </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Building2 className="w-4 h-4 text-primary" />
-                  Firma *
+              <div>
+                <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                  {t('contact.company')}
                 </label>
                 <Input
+                  id="company"
                   name="company"
+                  type="text"
+                  required
                   value={formData.company}
                   onChange={handleChange}
-                  placeholder="Bauunternehmen GmbH"
-                  className="bg-background/50 border-border focus:border-primary"
-                  required
+                  className="bg-background border-border"
                 />
               </div>
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                E-Mail *
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                {t('contact.email')}
               </label>
               <Input
-                type="email"
+                id="email"
                 name="email"
+                type="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="max@bauunternehmen.de"
-                className="bg-background/50 border-border focus:border-primary"
-                required
+                className="bg-background border-border"
               />
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                <MessageSquare className="w-4 h-4 text-primary" />
-                Nachricht (optional)
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                {t('contact.message')}
               </label>
               <Textarea
+                id="message"
                 name="message"
+                required
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Erzählen Sie uns von Ihren Herausforderungen bei der Protokollierung..."
-                className="bg-background/50 border-border focus:border-primary min-h-32"
-                rows={5}
+                className="bg-background border-border min-h-[120px]"
               />
             </div>
 
             <Button 
               type="submit" 
               variant="cta" 
-              size="lg"
+              size="xl"
               className="w-full"
             >
-              Pilotprojekt anfragen
+              {t('contact.submit')}
             </Button>
-
-            <p className="text-sm text-muted-foreground text-center">
-              Wir antworten innerhalb von 24 Stunden. Keine Kosten, keine Verpflichtungen.
-            </p>
           </form>
         </Card>
-
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">
-            Oder kontaktieren Sie uns direkt:
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4 text-foreground">
-            <a href="mailto:pilot@edgecrew.de" className="hover:text-primary transition-smooth">
-              📧 pilot@edgecrew.de
-            </a>
-            <span className="hidden sm:inline text-muted-foreground">|</span>
-            <a href="tel:+493511234567" className="hover:text-primary transition-smooth">
-              📞 +49 351 123 456 7
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

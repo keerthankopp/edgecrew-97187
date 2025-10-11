@@ -1,37 +1,40 @@
 import { Globe, Mic, Database } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FutureVision = () => {
+  const { t } = useLanguage();
+  
   const futureFeatures = [
     {
       icon: Globe,
-      title: "Live-Übersetzung",
-      description: "Internationale Bauprojekte? Kein Problem. Echtzeit-Übersetzung für mehrsprachige Teams."
+      titleKey: "future.translation.title",
+      descKey: "future.translation.desc"
     },
     {
       icon: Mic,
-      title: "Voice-Interface",
-      description: "Datenabfragen per Sprache: 'Wann war das letzte Gespräch mit Architekt Meyer?'"
+      titleKey: "future.voice.title",
+      descKey: "future.voice.desc"
     },
     {
       icon: Database,
-      title: "Intelligente Suche",
-      description: "Durchsuchen Sie alle Ihre Protokolle nach Stichworten, Personen oder Projekten."
+      titleKey: "future.search.title",
+      descKey: "future.search.desc"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section className="py-20 px-4 bg-secondary/30" id="future">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-4">
-            <span className="text-primary font-semibold">Coming Soon</span>
+            <span className="text-primary font-semibold">{t('future.badge')}</span>
           </div>
           <h2 className="mb-4">
-            Die <span className="text-primary">Zukunft</span> ist Voice-First
+            {t('future.title')} <span className="text-primary">{t('future.titleAccent')}</span> {t('future.titleEnd')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            EdgeCrew entwickelt sich stetig weiter. Unser Ziel: Die komplette Bau-Kommunikation per Sprache steuern.
+            {t('future.subtitle')}
           </p>
         </div>
 
@@ -43,15 +46,15 @@ const FutureVision = () => {
             >
               {/* Future Label */}
               <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold">
-                Roadmap
+                {t('future.roadmap')}
               </div>
 
               <div className="mb-6 p-4 rounded-lg bg-primary/10 w-fit group-hover:bg-primary/20 transition-smooth">
                 <feature.icon className="w-10 h-10 text-primary" />
               </div>
-              <h3 className="mb-4 text-foreground">{feature.title}</h3>
+              <h3 className="mb-4 text-foreground">{t(feature.titleKey)}</h3>
               <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
+                {t(feature.descKey)}
               </p>
             </Card>
           ))}
@@ -59,7 +62,7 @@ const FutureVision = () => {
 
         <div className="mt-12 text-center">
           <p className="text-muted-foreground">
-            Haben Sie Feature-Wünsche? Als Pilotpartner gestalten Sie die Zukunft von EdgeCrew mit.
+            {t('future.feedback')}
           </p>
         </div>
       </div>

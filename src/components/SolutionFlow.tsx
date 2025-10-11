@@ -1,40 +1,43 @@
 import { Phone, Bot, Send, ArrowRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const SolutionFlow = () => {
+  const { t } = useLanguage();
+  
   const steps = [
     {
       icon: Phone,
       number: "01",
-      title: "Sprechen",
-      description: "Bauleiter telefoniert ganz normal über das EdgeCrew-System. Keine App, keine Umstellung."
+      titleKey: "solution.step1.title",
+      descKey: "solution.step1.desc"
     },
     {
       icon: Bot,
       number: "02",
-      title: "K.I. Protokoll",
-      description: "Unsere Edge-AI transkribiert und fasst automatisch zusammen: Aktionen, Entscheidungen, Teilnehmer."
+      titleKey: "solution.step2.title",
+      descKey: "solution.step2.desc"
     },
     {
       icon: Send,
       number: "03",
-      title: "Versand",
-      description: "Fertiges, formatiertes Protokoll wird sofort per E-Mail an alle Teilnehmer versendet."
+      titleKey: "solution.step3.title",
+      descKey: "solution.step3.desc"
     }
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section className="py-20 px-4" id="solution">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-4">
-            <span className="text-primary font-semibold">Voice First</span>
+            <span className="text-primary font-semibold">{t('solution.badge')}</span>
           </div>
           <h2 className="mb-4">
-            So einfach geht's
+            {t('solution.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Von Ihrem Anruf zum fertigen Protokoll – vollautomatisch in Sekunden
+            {t('solution.subtitle')}
           </p>
         </div>
 
@@ -53,9 +56,9 @@ const SolutionFlow = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="mb-4 text-foreground">{step.title}</h3>
+                <h3 className="mb-4 text-foreground">{t(step.titleKey)}</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
+                  {t(step.descKey)}
                 </p>
               </Card>
 
@@ -72,8 +75,8 @@ const SolutionFlow = () => {
         {/* Screenshot Placeholder */}
         <div className="mt-16 p-8 rounded-xl bg-secondary/30 border-2 border-dashed border-primary/30">
           <div className="text-center text-muted-foreground">
-            <p className="text-lg mb-2">📧 Beispiel-Protokoll E-Mail</p>
-            <p className="text-sm">[Screenshot-Platzhalter: Formatiertes Protokoll in E-Mail-Ansicht]</p>
+            <p className="text-lg mb-2">{t('solution.demo')}</p>
+            <p className="text-sm">{t('solution.demoPlaceholder')}</p>
           </div>
         </div>
       </div>

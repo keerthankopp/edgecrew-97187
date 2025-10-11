@@ -1,48 +1,44 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
-    <footer className="py-12 px-4 border-t border-border bg-secondary/20">
+    <footer className="bg-secondary/30 border-t border-border py-12 px-4">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-2 gradient-accent bg-clip-text text-transparent">
-              EdgeCrew
+            <h3 className="text-2xl font-bold mb-4">
+              Edge<span className="text-primary">Crew</span>
             </h3>
-            <p className="text-muted-foreground text-sm">
-              Voice-First-Protokollierung für die Baubranche
+            <p className="text-muted-foreground">
+              {t('footer.tagline')}
             </p>
           </div>
 
-          {/* Quick Links */}
+          {/* Contact */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Kontakt</h4>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p>📧 pilot@edgecrew.de</p>
-              <p>📞 +49 351 123 456 7</p>
-              <p>📍 Dresden, Deutschland</p>
-            </div>
+            <h4 className="font-semibold mb-4 text-foreground">{t('footer.contact')}</h4>
+            <p className="text-muted-foreground">
+              Dresden, Deutschland<br />
+              info@edgecrew.de
+            </p>
           </div>
 
-          {/* Info */}
+          {/* Legal */}
           <div>
-            <h4 className="font-semibold mb-4 text-foreground">Unternehmen</h4>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p>🏢 YETI Dresden Pre-Incubator</p>
-              <p>🇩🇪 Made & Hosted in Germany</p>
-              <p>🔒 100% DSGVO-konform</p>
-            </div>
+            <h4 className="font-semibold mb-4 text-foreground">{t('footer.legal')}</h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li><a href="#" className="hover:text-primary transition-smooth">{t('footer.privacy')}</a></li>
+              <li><a href="#" className="hover:text-primary transition-smooth">{t('footer.imprint')}</a></li>
+              <li><a href="#" className="hover:text-primary transition-smooth">{t('footer.terms')}</a></li>
+            </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© 2024 EdgeCrew. Alle Rechte vorbehalten.</p>
-          <div className="mt-2 space-x-4">
-            <a href="#" className="hover:text-primary transition-smooth">Impressum</a>
-            <span>|</span>
-            <a href="#" className="hover:text-primary transition-smooth">Datenschutz</a>
-            <span>|</span>
-            <a href="#" className="hover:text-primary transition-smooth">AGB</a>
-          </div>
+        <div className="mt-8 pt-8 border-t border-border text-center text-muted-foreground text-sm">
+          © {new Date().getFullYear()} EdgeCrew. {t('footer.rights')}
         </div>
       </div>
     </footer>
