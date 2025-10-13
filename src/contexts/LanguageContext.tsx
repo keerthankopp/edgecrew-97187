@@ -19,7 +19,7 @@ const translations = {
     'nav.contact': 'Kontakt',
     
     // Hero Section
-    'hero.title': 'Die Baustelle spricht. Ihre Dokumentation schreibt sich von selbst.',
+    'hero.title': 'Edge-AI: Die Zukunft der Baudokumentation ist sprachgesteuert.',
     'hero.subtitle': 'Sparen Sie 3+ Stunden täglich. EdgeCrew ist der DSGVO-konforme, sprachgesteuerte KI-Assistent, der jedes Bau-Telefonat automatisch dokumentiert.',
     'hero.cta': 'Werden Sie Pilotpartner & Jetzt Zeit sparen',
     'hero.trust1': '100% DSGVO-konform',
@@ -109,7 +109,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'The Construction Site Speaks. Your Documentation Writes Itself.',
+    'hero.title': 'Edge-AI: The Future of Construction Documentation is Voice-Controlled.',
     'hero.subtitle': 'Save 3+ hours daily. EdgeCrew is the GDPR-compliant, voice-controlled AI assistant that automatically documents every construction call.',
     'hero.cta': 'Become a Pilot Partner & Save Time Now',
     'hero.trust1': '100% GDPR Compliant',
