@@ -52,8 +52,8 @@ const translations = {
     'trust.subtitle': 'Ihre Daten bleiben in Deutschland – keine US-Cloud, maximale Kontrolle.',
     'trust.gdpr.title': 'DSGVO-Compliance',
     'trust.gdpr.desc': 'Vollständige Einhaltung aller deutschen und europäischen Datenschutzrichtlinien.',
-    'trust.edge.title': 'Edge-Server',
-    'trust.edge.desc': 'Datenverarbeitung erfolgt lokal auf Ihren Servern – maximale Sicherheit und Kontrolle.',
+    'trust.edge.title': 'Keine US-Cloud',
+    'trust.edge.desc': 'Ihre Daten bleiben in Deutschland und unterliegen ausschließlich deutscher Rechtsprechung.',
     'trust.encryption.title': 'Ende-zu-Ende-Verschlüsselung',
     'trust.encryption.desc': 'Alle Gespräche und Protokolle sind durchgehend verschlüsselt.',
     
@@ -142,8 +142,8 @@ const translations = {
     'trust.subtitle': 'Your data stays in Germany – no US cloud, maximum control.',
     'trust.gdpr.title': 'GDPR Compliance',
     'trust.gdpr.desc': 'Full compliance with all German and European data protection regulations.',
-    'trust.edge.title': 'Edge Servers',
-    'trust.edge.desc': 'Data processing happens locally on your servers – maximum security and control.',
+    'trust.edge.title': 'No US Cloud',
+    'trust.edge.desc': 'Your data stays in Germany and is subject exclusively to German jurisdiction.',
     'trust.encryption.title': 'End-to-End Encryption',
     'trust.encryption.desc': 'All conversations and protocols are fully encrypted.',
     
