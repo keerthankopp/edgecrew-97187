@@ -1,4 +1,4 @@
-import { Users, TrendingUp, Award } from "lucide-react";
+import { Users, TrendingUp, Award, Linkedin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -6,11 +6,11 @@ const TeamTraction = () => {
   const { t } = useLanguage();
   
   const teamMembers = [
-    { name: "Aboud Mouakket", role: "CEO, Strategie & Vision", linkedin: "#" },
-    { name: "Julio Bernal", role: "Sales & Bau-Expertise", linkedin: "#" },
-    { name: "Malte Karitzky", role: "Produkt & Hardware", linkedin: "#" },
-    { name: "Hannes Szeski", role: "Software & Marketing", linkedin: "#" },
-    { name: "Keerthan K. Radhakrishna", role: "Backend & AI Development", linkedin: "#" }
+    { name: "Aboud Mouakket", role: "CEO, Strategie & Vision", linkedin: "https://www.linkedin.com/in/aboudmouakket/" },
+    { name: "Julio Bernal", role: "Sales & Bau-Expertise", linkedin: "https://www.linkedin.com/in/julio-bernal-078722218/" },
+    { name: "Malte Karitzky", role: "Produkt & Hardware", linkedin: "https://www.linkedin.com/in/karitzky/" },
+    { name: "Hannes Szeski", role: "Software & Marketing", linkedin: "https://www.linkedin.com/in/hannes-szeski-a35aa0276/" },
+    { name: "Keerthan K. Radhakrishna", role: "Backend & AI Development", linkedin: "https://www.linkedin.com/in/keerthankopparam/" }
   ];
 
   const tractionPoints = [
@@ -55,7 +55,7 @@ const TeamTraction = () => {
                         <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">{member.name}</p>
                         <p className="text-sm text-muted-foreground">{member.role}</p>
                       </div>
-                      <Users className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
+                      <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
                     </div>
                   </Card>
                 </a>
