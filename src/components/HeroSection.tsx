@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Phone } from "lucide-react";
 import heroImage from "@/assets/hero-construction.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -27,16 +26,9 @@ const HeroSection = () => {
       {/* Content */}
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Icon */}
-          <div className="flex justify-center mb-6">
-            <div className="p-4 rounded-full bg-primary/20 border-2 border-primary glow-accent">
-              <Phone className="w-12 h-12 text-primary" />
-            </div>
-          </div>
-
           {/* Headline */}
           <h1 className="text-foreground leading-tight">
-            {t('hero.title')} <span className="text-primary">{t('hero.titleAccent')}</span>{t('hero.titleEnd')}
+            {t('hero.title')}
           </h1>
 
           {/* Sub-Headline */}

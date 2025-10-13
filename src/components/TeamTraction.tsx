@@ -6,11 +6,11 @@ const TeamTraction = () => {
   const { t } = useLanguage();
   
   const teamMembers = [
-    { name: "Gründer 1", role: "CEO & Tech Lead" },
-    { name: "Gründer 2", role: "CTO" },
-    { name: "Gründer 3", role: "Business Development" },
-    { name: "Gründer 4", role: "AI Engineer" },
-    { name: "Gründer 5", role: "Sales & Marketing" }
+    { name: "Aboud Mouakket", role: "CEO, Strategie & Vision", linkedin: "#" },
+    { name: "Julio Bernal", role: "Sales & Bau-Expertise", linkedin: "#" },
+    { name: "Malte Karitzky", role: "Produkt & Hardware", linkedin: "#" },
+    { name: "Hannes Szeski", role: "Software & Marketing", linkedin: "#" },
+    { name: "Keerthan K. Radhakrishna", role: "Backend & AI Development", linkedin: "#" }
   ];
 
   const tractionPoints = [
@@ -23,12 +23,9 @@ const TeamTraction = () => {
     <section className="py-20 px-4 bg-secondary/30" id="team">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="mb-4">
-            {t('team.title')} <span className="text-primary">{t('team.titleAccent')}</span>
+          <h2 className="mb-4 text-foreground">
+            {t('team.title')}
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            {t('team.subtitle')}
-          </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -40,20 +37,28 @@ const TeamTraction = () => {
             </h3>
             <div className="space-y-4">
               {teamMembers.map((member, index) => (
-                <Card 
+                <a
                   key={index}
-                  className="p-4 bg-card border-border hover:border-primary/50 transition-smooth"
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
-                      {index + 1}
+                  <Card 
+                    className="p-4 bg-card border-border hover:border-primary/50 transition-smooth cursor-pointer group"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold group-hover:bg-primary/30 transition-smooth">
+                        {member.name.charAt(0)}
+                      </div>
+                      <div className="flex-1">
+                        <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">{member.name}</p>
+                        <p className="text-sm text-muted-foreground">{member.role}</p>
+                      </div>
+                      <Users className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
                     </div>
-                    <div>
-                      <p className="font-semibold text-foreground">{member.name}</p>
-                      <p className="text-sm text-muted-foreground">{member.role}</p>
-                    </div>
-                  </div>
-                </Card>
+                  </Card>
+                </a>
               ))}
             </div>
           </div>

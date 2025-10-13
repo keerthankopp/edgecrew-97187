@@ -30,9 +30,6 @@ const SolutionFlow = () => {
     <section className="py-20 px-4" id="solution">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-4">
-            <span className="text-primary font-semibold">{t('solution.badge')}</span>
-          </div>
           <h2 className="mb-4">
             {t('solution.title')}
           </h2>

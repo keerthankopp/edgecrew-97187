@@ -19,31 +19,21 @@ const translations = {
     'nav.contact': 'Kontakt',
     
     // Hero Section
-    'hero.title': 'Das Ende der',
-    'hero.titleAccent': 'Protokoll-Pflicht',
-    'hero.titleEnd': ': EdgeCrew protokolliert Ihre Bau-Anrufe automatisch',
-    'hero.subtitle': 'Wir sparen Bauleitern 1 Stunde täglich. Ihre Anrufe werden transkribiert und als fertiges Protokoll per E-Mail versendet – sicher und 100% DSGVO-konform.',
-    'hero.cta': 'Jetzt 1 Stunde täglich sparen: Pilotprojekt starten',
+    'hero.title': 'Die Baustelle spricht. Ihre Dokumentation schreibt sich von selbst.',
+    'hero.subtitle': 'Sparen Sie 3+ Stunden täglich. EdgeCrew ist der DSGVO-konforme, sprachgesteuerte KI-Assistent, der jedes Bau-Telefonat automatisch dokumentiert.',
+    'hero.cta': 'Werden Sie Pilotpartner & Jetzt Zeit sparen',
     'hero.trust1': '100% DSGVO-konform',
     'hero.trust2': 'Lokale Datenverarbeitung',
     'hero.trust3': 'Sofort einsatzbereit',
     
     // Problem Section
-    'problem.title': 'Das',
-    'problem.titleAccent': 'Problem',
-    'problem.titleEnd': 'kennen Sie',
-    'problem.subtitle': 'Jeder Anruf auf der Baustelle muss dokumentiert werden. Aber wer hat schon Zeit für manuelle Protokolle?',
-    'problem.time.title': 'Zeit-Verschwendung',
-    'problem.time.desc': '5 Minuten Protokollierung pro Anruf × 12 Anrufe täglich = 1 Stunde täglich verloren',
-    'problem.error.title': 'Fehleranfälligkeit',
-    'problem.error.desc': 'Manuelle Notizen führen zu vergessenen Details und Missverständnissen',
-    'problem.inefficiency.title': 'Ineffizienz',
-    'problem.inefficiency.desc': 'Bauleiter verbringen mehr Zeit mit Papierkram als auf der Baustelle',
-    'problem.stats': '1 Stunde täglich = 250 Stunden pro Jahr verschwendet',
+    'problem.title': '47 Milliarden Euro verschwendet: Der verborgene Kostenfaktor auf dem Bau.',
+    'problem.stat1': 'Verlust p.a. in der Bauindustrie',
+    'problem.stat2': 'Stunden Zeitverlust pro Team/Tag für Dokumentation',
+    'problem.stat3': 'der KMUs lehnen US-Clouds ab (DSGVO-Sorgen)',
     
     // Solution Section
-    'solution.badge': 'Voice First',
-    'solution.title': 'So einfach geht\'s',
+    'solution.title': 'Aktueller Status: Wir liefern AI-gestützte Effizienz schon heute.',
     'solution.subtitle': 'Von Ihrem Anruf zum fertigen Protokoll – vollautomatisch in Sekunden',
     'solution.step1.title': 'Sprechen',
     'solution.step1.desc': 'Bauleiter telefoniert ganz normal über das EdgeCrew-System. Keine App, keine Umstellung.',
@@ -68,9 +58,7 @@ const translations = {
     'trust.encryption.desc': 'Alle Gespräche und Protokolle sind durchgehend verschlüsselt.',
     
     // Team & Traction
-    'team.title': 'Team &',
-    'team.titleAccent': 'Traction',
-    'team.subtitle': 'Erfahrenes Team mit klarer Vision für die Zukunft der Bau-Kommunikation',
+    'team.title': 'Die perfekte End-to-End-Lösung: Geboren aus Bau-Expertise und KI-Technologie.',
     'team.members.title': 'Unser Team',
     'team.traction.title': 'Aktueller Status',
     'team.status1': 'Prototyp fertiggestellt',
@@ -121,31 +109,21 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'The End of',
-    'hero.titleAccent': 'Manual Protocols',
-    'hero.titleEnd': ': EdgeCrew automatically logs your construction calls',
-    'hero.subtitle': 'We save construction managers 1 hour daily. Your calls are transcribed and sent as a finished protocol via email – secure and 100% GDPR compliant.',
-    'hero.cta': 'Save 1 Hour Daily Now: Start Pilot Project',
+    'hero.title': 'The Construction Site Speaks. Your Documentation Writes Itself.',
+    'hero.subtitle': 'Save 3+ hours daily. EdgeCrew is the GDPR-compliant, voice-controlled AI assistant that automatically documents every construction call.',
+    'hero.cta': 'Become a Pilot Partner & Save Time Now',
     'hero.trust1': '100% GDPR Compliant',
     'hero.trust2': 'Local Data Processing',
     'hero.trust3': 'Ready to Use',
     
     // Problem Section
-    'problem.title': 'You Know the',
-    'problem.titleAccent': 'Problem',
-    'problem.titleEnd': '',
-    'problem.subtitle': 'Every call on the construction site must be documented. But who has time for manual protocols?',
-    'problem.time.title': 'Time Waste',
-    'problem.time.desc': '5 minutes logging per call × 12 calls daily = 1 hour lost daily',
-    'problem.error.title': 'Error-Prone',
-    'problem.error.desc': 'Manual notes lead to forgotten details and misunderstandings',
-    'problem.inefficiency.title': 'Inefficiency',
-    'problem.inefficiency.desc': 'Construction managers spend more time on paperwork than on site',
-    'problem.stats': '1 hour daily = 250 hours wasted per year',
+    'problem.title': '47 Billion Euros Wasted: The Hidden Cost Factor in Construction.',
+    'problem.stat1': 'Loss p.a. in the construction industry',
+    'problem.stat2': 'Hours of time lost per team/day on documentation',
+    'problem.stat3': 'of SMEs reject US clouds (GDPR concerns)',
     
     // Solution Section
-    'solution.badge': 'Voice First',
-    'solution.title': 'How It Works',
+    'solution.title': 'Current Status: We Deliver AI-Powered Efficiency Today.',
     'solution.subtitle': 'From your call to the finished protocol – fully automated in seconds',
     'solution.step1.title': 'Speak',
     'solution.step1.desc': 'Construction manager calls normally via the EdgeCrew system. No app, no changes.',
@@ -170,9 +148,7 @@ const translations = {
     'trust.encryption.desc': 'All conversations and protocols are fully encrypted.',
     
     // Team & Traction
-    'team.title': 'Team &',
-    'team.titleAccent': 'Traction',
-    'team.subtitle': 'Experienced team with a clear vision for the future of construction communication',
+    'team.title': 'The Perfect End-to-End Solution: Born from Construction Expertise and AI Technology.',
     'team.members.title': 'Our Team',
     'team.traction.title': 'Current Status',
     'team.status1': 'Prototype completed',
