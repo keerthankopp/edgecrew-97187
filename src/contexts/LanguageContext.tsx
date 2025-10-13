@@ -28,7 +28,7 @@ const translations = {
     
     // Problem Section
     'problem.title': '47 Milliarden Euro verschwendet: Der verborgene Kostenfaktor auf dem Bau.',
-    'problem.stat1': 'Verlust p.a. in der Bauindustrie',
+    'problem.stat1': 'Verlust pro Jahr in der deutschen Bauindustrie',
     'problem.stat2': 'Stunden Zeitverlust pro Team/Tag für Dokumentation',
     'problem.stat3': 'der KMUs lehnen US-Clouds ab (DSGVO-Sorgen)',
     
@@ -118,7 +118,7 @@ const translations = {
     
     // Problem Section
     'problem.title': '47 Billion Euros Wasted: The Hidden Cost Factor in Construction.',
-    'problem.stat1': 'Loss p.a. in the construction industry',
+    'problem.stat1': 'Loss per year in the German construction industry',
     'problem.stat2': 'Hours of time lost per team/day on documentation',
     'problem.stat3': 'of SMEs reject US clouds (GDPR concerns)',
     
