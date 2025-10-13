@@ -61,7 +61,7 @@ const SolutionFlow = () => {
 
               {/* Arrow between steps */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+                <div className="hidden md:flex absolute top-1/2 -right-4 -translate-y-1/2 z-10 items-center justify-center">
                   <ArrowRight className="w-8 h-8 text-primary animate-pulse" />
                 </div>
               )}
