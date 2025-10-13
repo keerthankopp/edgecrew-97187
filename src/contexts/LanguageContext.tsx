@@ -58,7 +58,7 @@ const translations = {
     'trust.encryption.desc': 'Alle Gespräche und Protokolle sind durchgehend verschlüsselt.',
     
     // Team & Traction
-    'team.title': 'Edge-AI: Die Zukunft der Baudokumentation ist sprachgesteuert.',
+    'team.title': 'Die perfekte End-to-End-Lösung: Geboren aus Bau-Expertise und KI-Technologie.',
     'team.members.title': 'Unser Team',
     'team.traction.title': 'Aktueller Status',
     'team.status1': 'Prototyp fertiggestellt',
@@ -148,7 +148,7 @@ const translations = {
     'trust.encryption.desc': 'All conversations and protocols are fully encrypted.',
     
     // Team & Traction
-    'team.title': 'Edge-AI: The Future of Construction Documentation is Voice-Controlled.',
+    'team.title': 'The Perfect End-to-End Solution: Born from Construction Expertise and AI Technology.',
     'team.members.title': 'Our Team',
     'team.traction.title': 'Current Status',
     'team.status1': 'Prototype completed',
