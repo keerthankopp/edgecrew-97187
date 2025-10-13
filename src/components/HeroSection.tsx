@@ -2,23 +2,26 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import heroImage from "@/assets/hero-construction.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+
 const HeroSection = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
+  
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero pt-16">
+
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero pt-16">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0" style={{
-      backgroundImage: `url(${heroImage})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      opacity: 0.2
-    }} />
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.2
+        }}
+      />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-0" />
 
       {/* Content */}
@@ -43,7 +46,12 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="pt-8">
-            <Button variant="cta" size="xl" onClick={scrollToContact} className="animate-pulse hover:animate-none">
+            <Button 
+              variant="cta" 
+              size="xl"
+              onClick={scrollToContact}
+              className="animate-pulse hover:animate-none"
+            >
               {t('hero.cta')}
             </Button>
           </div>
@@ -68,8 +76,12 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-        
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
+        </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
