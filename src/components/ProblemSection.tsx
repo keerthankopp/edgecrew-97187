@@ -7,16 +7,16 @@ const ProblemSection = () => {
   
   const stats = [
     {
-      value: "47 Mrd. €",
-      labelKey: "problem.stat1"
-    },
-    {
       value: "3+",
       labelKey: "problem.stat2"
     },
     {
       value: "< 30%",
       labelKey: "problem.stat3"
+    },
+    {
+      value: "47 Mrd. €",
+      labelKey: "problem.stat1"
     }
   ];
 
