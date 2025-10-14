@@ -1,26 +1,23 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
-
 const HeroSection = () => {
-  const { t } = useLanguage();
-  
+  const {
+    t
+  } = useLanguage();
   const scrollToContact = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('contact')?.scrollIntoView({
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero pt-16">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero pt-16">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          opacity: 0.2
-        }}
-      />
+      <div className="absolute inset-0 z-0" style={{
+      backgroundImage: `url(${heroImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      opacity: 0.2
+    }} />
       <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/90 to-background z-0" />
 
       {/* Content */}
@@ -38,12 +35,7 @@ const HeroSection = () => {
 
           {/* CTA Button */}
           <div className="pt-8">
-            <Button 
-              variant="cta" 
-              size="lg"
-              onClick={scrollToContact}
-              className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap"
-            >
+            <Button variant="cta" size="lg" onClick={scrollToContact} className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap my-0 py-[32px]">
               {t('hero.cta')}
             </Button>
           </div>
@@ -72,8 +64,6 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse" />
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
