@@ -21,7 +21,7 @@ const translations = {
     // Hero Section
     'hero.title': 'EdgeCrew ist der sprachgesteuerte KI-Assistent, der Echtzeit-Klarheit auf Baustellen bringt.',
     'hero.subtitle': 'Sparen Sie 3+ Stunden täglich. EdgeCrew ist der DSGVO-konforme, sprachgesteuerte KI-Assistent, der jedes Bau-Telefonat automatisch dokumentiert.',
-    'hero.cta': 'Demo jetzt buchen',
+    'hero.cta': 'Jetzt Demo buchen',
     'hero.trust1': '100% DSGVO-konform',
     'hero.trust2': 'Lokale Datenverarbeitung',
     'hero.trust3': 'Sofort einsatzbereit',
