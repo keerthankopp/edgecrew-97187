@@ -19,6 +19,22 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Construct email body
+    const emailBody = `
+Name: ${formData.name}
+Company: ${formData.company}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+    `.trim();
+    
+    // Create mailto link
+    const mailtoLink = `mailto:sales@edgecrew.de?subject=Pilot Project Request&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
     toast({
       title: t('contact.success'),
       description: "",
