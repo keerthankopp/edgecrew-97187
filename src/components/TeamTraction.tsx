@@ -1,16 +1,21 @@
 import { Users, TrendingUp, Award, Linkedin } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
+import aboudImage from "@/assets/aboud.jpeg";
+import julioImage from "@/assets/julio.jpeg";
+import malteImage from "@/assets/malte.jpeg";
+import hannesImage from "@/assets/hannes.jpeg";
+import keerthanImage from "@/assets/keerthan.jpeg";
 
 const TeamTraction = () => {
   const { t } = useLanguage();
   
   const teamMembers = [
-    { name: "Aboud Mouakket", role: "CEO, Strategie & Vision", linkedin: "https://www.linkedin.com/in/aboudmouakket/" },
-    { name: "Julio Bernal", role: "Sales & Bau-Expertise", linkedin: "https://www.linkedin.com/in/julio-bernal-078722218/" },
-    { name: "Malte Karitzky", role: "Produkt & Hardware", linkedin: "https://www.linkedin.com/in/karitzky/" },
-    { name: "Hannes Szeski", role: "Software & Marketing", linkedin: "https://www.linkedin.com/in/hannes-szeski-a35aa0276/" },
-    { name: "Keerthan K. Radhakrishna", role: "Backend & AI Development", linkedin: "https://www.linkedin.com/in/keerthankopparam/" }
+    { name: "Aboud Mouakket", role: "CEO, Strategie & Vision", linkedin: "https://www.linkedin.com/in/aboudmouakket/", image: aboudImage },
+    { name: "Julio Bernal", role: "Sales & Bau-Expertise", linkedin: "https://www.linkedin.com/in/julio-bernal-078722218/", image: julioImage },
+    { name: "Malte Karitzky", role: "Produkt & Hardware", linkedin: "https://www.linkedin.com/in/karitzky/", image: malteImage },
+    { name: "Hannes Szeski", role: "Software & Marketing", linkedin: "https://www.linkedin.com/in/hannes-szeski-a35aa0276/", image: hannesImage },
+    { name: "Keerthan K. Radhakrishna", role: "Backend & AI Development", linkedin: "https://www.linkedin.com/in/keerthankopparam/", image: keerthanImage }
   ];
 
   const tractionPoints = [
@@ -48,9 +53,11 @@ const TeamTraction = () => {
                     className="p-4 bg-card border-border hover:border-primary/50 transition-smooth cursor-pointer group"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold group-hover:bg-primary/30 transition-smooth">
-                        {member.name.charAt(0)}
-                      </div>
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-12 h-12 rounded-full object-cover border-2 border-primary/20 group-hover:border-primary/50 transition-smooth"
+                      />
                       <div className="flex-1">
                         <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">{member.name}</p>
                         <p className="text-sm text-muted-foreground">{member.role}</p>
