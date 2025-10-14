@@ -15,7 +15,7 @@ const ProblemSection = () => {
       labelKey: "problem.stat2"
     },
     {
-      value: "60%",
+      value: "< 30%",
       labelKey: "problem.stat3"
     }
   ];
