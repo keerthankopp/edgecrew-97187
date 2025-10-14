@@ -151,7 +151,7 @@ const translations = {
     'team.title': 'The Perfect End-to-End Solution: Born from Construction Expertise and AI Technology.',
     'team.members.title': 'Our Team',
     'team.traction.title': 'Current Status',
-    'team.status1': 'Prototype completed',
+    'team.status1': 'MVP developed',
     'team.status2': 'Pilot projects in acquisition',
     'team.status3': 'YETI Dresden Pre-Incubator',
     
