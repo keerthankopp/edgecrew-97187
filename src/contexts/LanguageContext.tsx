@@ -66,7 +66,7 @@ const translations = {
     'team.status3': 'YETI Dresden Pre-Incubator',
     
     // Future Vision
-    'future.badge': 'Vision',
+    'future.badge': 'vision',
     'future.title': 'Die',
     'future.titleAccent': 'Zukunft',
     'future.titleEnd': 'ist Voice-First',
