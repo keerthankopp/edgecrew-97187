@@ -40,9 +40,9 @@ const HeroSection = () => {
           <div className="pt-8">
             <Button 
               variant="cta" 
-              size="xl"
+              size="lg"
               onClick={scrollToContact}
-              className="animate-pulse hover:animate-none"
+              className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6"
             >
               {t('hero.cta')}
             </Button>
