@@ -61,7 +61,7 @@ const translations = {
     'team.title': 'Die perfekte End-to-End-Lösung: Geboren aus Bau-Expertise und KI-Technologie.',
     'team.members.title': 'Unser Team',
     'team.traction.title': 'Aktueller Status',
-    'team.status1': 'Prototyp fertiggestellt',
+    'team.status1': 'MVP entwickelt',
     'team.status2': 'Pilotprojekte in Akquise',
     'team.status3': 'YETI Dresden Pre-Incubator',
     
