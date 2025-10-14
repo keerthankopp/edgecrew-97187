@@ -66,7 +66,7 @@ const translations = {
     'team.status3': 'YETI Dresden Pre-Incubator',
     
     // Future Vision
-    'future.badge': 'vision',
+    'future.badge': 'Vision',
     'future.title': 'Die',
     'future.titleAccent': 'Zukunft',
     'future.titleEnd': 'ist Voice-First',
@@ -156,7 +156,7 @@ const translations = {
     'team.status3': 'YETI Dresden Pre-Incubator',
     
     // Future Vision
-    'future.badge': 'Coming Soon',
+    'future.badge': 'Vision',
     'future.title': 'The',
     'future.titleAccent': 'Future',
     'future.titleEnd': 'is Voice-First',
