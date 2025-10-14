@@ -98,8 +98,32 @@ const translations = {
     'footer.legal': 'Rechtliches',
     'footer.privacy': 'Datenschutz',
     'footer.imprint': 'Impressum',
-    'footer.terms': 'AGB',
     'footer.rights': 'Alle Rechte vorbehalten.',
+    
+    // Impressum
+    'impressum.title': 'Impressum',
+    'impressum.company': 'Angaben gemäß § 5 TMG',
+    'impressum.represented': 'Vertreten durch',
+    'impressum.register': 'Registereintrag',
+    'impressum.responsible': 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV',
+    'impressum.responsibleContent': 'EdgeCrew GmbH, Dresden',
+    'impressum.dispute': 'Streitschlichtung',
+    'impressum.disputeContent': 'Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.',
+    'impressum.backToHome': '← Zurück zur Startseite',
+    
+    // Privacy
+    'privacy.title': 'Datenschutzerklärung',
+    'privacy.overview': 'Allgemeine Hinweise',
+    'privacy.overviewContent': 'Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.',
+    'privacy.dataCollection': 'Datenerfassung auf dieser Website',
+    'privacy.contactForm': 'Kontaktformular',
+    'privacy.contactFormContent': 'Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.',
+    'privacy.cookies': 'Cookies',
+    'privacy.cookiesContent': 'Diese Website verwendet keine Cookies für Tracking oder Werbezwecke.',
+    'privacy.rights': 'Ihre Rechte',
+    'privacy.rightsContent': 'Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung sowie ein Recht auf Berichtigung oder Löschung dieser Daten.',
+    'privacy.contact': 'Kontakt',
+    'privacy.backToHome': '← Zurück zur Startseite',
   },
   en: {
     // Header
@@ -188,8 +212,32 @@ const translations = {
     'footer.legal': 'Legal',
     'footer.privacy': 'Privacy',
     'footer.imprint': 'Imprint',
-    'footer.terms': 'Terms',
     'footer.rights': 'All rights reserved.',
+    
+    // Impressum
+    'impressum.title': 'Legal Notice',
+    'impressum.company': 'Information according to § 5 TMG',
+    'impressum.represented': 'Represented by',
+    'impressum.register': 'Register Entry',
+    'impressum.responsible': 'Responsible for content according to § 55 Abs. 2 RStV',
+    'impressum.responsibleContent': 'EdgeCrew GmbH, Dresden',
+    'impressum.dispute': 'Dispute Resolution',
+    'impressum.disputeContent': 'The European Commission provides a platform for online dispute resolution (OS). We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
+    'impressum.backToHome': '← Back to Home',
+    
+    // Privacy
+    'privacy.title': 'Privacy Policy',
+    'privacy.overview': 'General Information',
+    'privacy.overviewContent': 'The following information provides a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you.',
+    'privacy.dataCollection': 'Data Collection on This Website',
+    'privacy.contactForm': 'Contact Form',
+    'privacy.contactFormContent': 'If you send us inquiries via the contact form, your data from the inquiry form, including the contact details you provided there, will be stored by us for the purpose of processing the inquiry and in case of follow-up questions. We do not pass on this data without your consent.',
+    'privacy.cookies': 'Cookies',
+    'privacy.cookiesContent': 'This website does not use cookies for tracking or advertising purposes.',
+    'privacy.rights': 'Your Rights',
+    'privacy.rightsContent': 'You have the right at any time to receive free information about your stored personal data, its origin and recipients, and the purpose of data processing, as well as the right to correct or delete this data.',
+    'privacy.contact': 'Contact',
+    'privacy.backToHome': '← Back to Home',
   }
 };
 
