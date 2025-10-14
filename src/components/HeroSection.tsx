@@ -42,7 +42,7 @@ const HeroSection = () => {
               variant="cta" 
               size="lg"
               onClick={scrollToContact}
-              className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6"
+              className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap"
             >
               {t('hero.cta')}
             </Button>
