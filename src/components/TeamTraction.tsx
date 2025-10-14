@@ -77,19 +77,40 @@ const TeamTraction = () => {
               {t('team.traction.title')}
             </h3>
             <div className="space-y-6">
-              {tractionPoints.map((point, index) => (
-                <Card 
-                  key={index}
-                  className="p-6 bg-card border-border hover:border-primary/50 transition-smooth group"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-smooth">
-                      <point.icon className="w-6 h-6 text-primary" />
+              {tractionPoints.map((point, index) => {
+                const isYeti = index === 2;
+                const content = (
+                  <Card 
+                    className="p-6 bg-card border-border hover:border-primary/50 transition-smooth group"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-smooth">
+                        <point.icon className="w-6 h-6 text-primary" />
+                      </div>
+                      <p className="text-lg text-foreground font-medium flex-1">{t(point.key)}</p>
+                      {isYeti && (
+                        <Linkedin className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-smooth" />
+                      )}
                     </div>
-                    <p className="text-lg text-foreground font-medium">{t(point.key)}</p>
+                  </Card>
+                );
+                
+                return isYeti ? (
+                  <a
+                    key={index}
+                    href="https://www.linkedin.com/school/yeti-dresden/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block cursor-pointer"
+                  >
+                    {content}
+                  </a>
+                ) : (
+                  <div key={index}>
+                    {content}
                   </div>
-                </Card>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
