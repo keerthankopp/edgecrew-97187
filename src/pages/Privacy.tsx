@@ -1,60 +1,67 @@
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const Privacy = () => {
-  const { t } = useLanguage();
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="container mx-auto max-w-4xl px-4 py-20">
-        <h1 className="mb-8">{t('privacy.title')}</h1>
+        <h1 className="mb-8">Impressum</h1>
         
         <div className="space-y-6 text-foreground">
           <section>
-            <h2 className="text-2xl font-semibold mb-4">{t('privacy.overview')}</h2>
+            <h2 className="text-2xl font-semibold mb-4">Angaben gemäß § 5 TMG</h2>
             <p className="text-muted-foreground">
-              {t('privacy.overviewContent')}
+              Stiftung Thomas Kirchner Bildungsförderungs gGmbH<br />
+              Zennerstr. 1<br />
+              c/o Thomas Kirchner<br />
+              81379 München
+            </p>
+            <p className="text-muted-foreground mt-4">
+              Handelsregister: HRB 281372<br />
+              Registergericht: Amtsgericht 80333 München
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">{t('privacy.dataCollection')}</h2>
-            <h3 className="text-xl font-semibold mb-3 mt-4">{t('privacy.contactForm')}</h3>
+            <h2 className="text-2xl font-semibold mb-4">Vertreten durch</h2>
             <p className="text-muted-foreground">
-              {t('privacy.contactFormContent')}
+              Thomas Kirchner
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">{t('privacy.cookies')}</h2>
+            <h2 className="text-2xl font-semibold mb-4">Kontakt</h2>
             <p className="text-muted-foreground">
-              {t('privacy.cookiesContent')}
+              Telefon: 0351 79606878<br />
+              E-Mail: info@yeti-dresden.org
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">{t('privacy.rights')}</h2>
+            <h2 className="text-2xl font-semibold mb-4">EU-Streitschlichtung</h2>
             <p className="text-muted-foreground">
-              {t('privacy.rightsContent')}
+              Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{" "}
+              <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                https://ec.europa.eu/consumers/odr/
+              </a>
+              .<br />
+              Unsere E-Mail-Adresse finden Sie oben im Impressum.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-semibold mb-4">{t('privacy.contact')}</h2>
+            <h2 className="text-2xl font-semibold mb-4">Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h2>
             <p className="text-muted-foreground">
-              EdgeCrew GmbH<br />
-              Dresden, Deutschland<br />
-              E-Mail: info@edgecrew.de
+              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
             </p>
           </section>
         </div>
 
         <div className="mt-12">
           <Link to="/" className="text-primary hover:underline">
-            {t('privacy.backToHome')}
+            ← Zurück zur Startseite
           </Link>
         </div>
       </main>
