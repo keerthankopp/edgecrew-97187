@@ -19,7 +19,7 @@ const translations = {
     'nav.contact': 'Kontakt',
     
     // Hero Section
-    'hero.title': 'Die Baubranche verschwendet 47 Mrd. € pro Jahr – und wir beheben das.',
+    'hero.title': 'EdgeCrew ist der sprachgesteuerte KI-Assistent, der Echtzeit-Klarheit auf Baustellen bringt.',
     'hero.subtitle': 'Sparen Sie 3+ Stunden täglich. EdgeCrew ist der DSGVO-konforme, sprachgesteuerte KI-Assistent, der jedes Bau-Telefonat automatisch dokumentiert.',
     'hero.cta': 'Werden Sie Pilotpartner & Jetzt Zeit sparen',
     'hero.trust1': '100% DSGVO-konform',
@@ -133,7 +133,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Construction wastes €47B a year and we\'re here to fix that.',
+    'hero.title': 'EdgeCrew is the voice-first AI assistant that brings real-time clarity to construction sites.',
     'hero.subtitle': 'Save 3+ hours daily. EdgeCrew is the GDPR-compliant, voice-controlled AI assistant that automatically documents every construction call.',
     'hero.cta': 'Become a Pilot Partner & Save Time Now',
     'hero.trust1': '100% GDPR Compliant',
