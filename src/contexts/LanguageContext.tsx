@@ -83,7 +83,7 @@ const translations = {
     // Contact Form
     'contact.title': 'Werden Sie unser',
     'contact.titleAccent': 'Pilotpartner',
-    'contact.titleEnd': 'in der Region Dresden',
+    'contact.titleEnd': 'in Sachsen',
     'contact.subtitle': 'Starten Sie jetzt Ihr Pilotprojekt und sparen Sie ab sofort 1 Stunde täglich. Kein Risiko, keine Verpflichtung.',
     'contact.name': 'Ihr Name',
     'contact.company': 'Firma',
@@ -173,7 +173,7 @@ const translations = {
     // Contact Form
     'contact.title': 'Become Our',
     'contact.titleAccent': 'Pilot Partner',
-    'contact.titleEnd': 'in the Dresden Region',
+    'contact.titleEnd': 'in Saxony',
     'contact.subtitle': 'Start your pilot project now and save 1 hour daily immediately. No risk, no obligation.',
     'contact.name': 'Your Name',
     'contact.company': 'Company',
