@@ -7,15 +7,15 @@ const ProblemSection = () => {
   
   const stats = [
     {
-      value: "3+",
+      valueKey: "problem.stat2Value",
       labelKey: "problem.stat2"
     },
     {
-      value: "47 Mrd. €",
+      valueKey: "problem.stat1Value",
       labelKey: "problem.stat1"
     },
     {
-      value: "< 30%",
+      valueKey: "problem.stat3Value",
       labelKey: "problem.stat3"
     }
   ];
@@ -36,7 +36,7 @@ const ProblemSection = () => {
               className="p-8 bg-card/50 backdrop-blur border-border hover:border-primary/50 transition-smooth group hover:shadow-glow text-center"
             >
               <div className="text-5xl md:text-6xl font-bold text-primary mb-4 group-hover:scale-110 transition-smooth">
-                {stat.value}
+                {t(stat.valueKey)}
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t(stat.labelKey)}

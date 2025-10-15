@@ -29,8 +29,11 @@ const translations = {
     // Problem Section
     'problem.title': '47 Milliarden Euro verschwendet: Der verborgene Kostenfaktor auf dem Bau.',
     'problem.stat1': 'Verlust pro Jahr in der deutschen Bauindustrie',
+    'problem.stat1Value': '47 Mrd. €',
     'problem.stat2': 'Stunden Zeitverlust pro Team/Tag für Dokumentation',
+    'problem.stat2Value': '3+',
     'problem.stat3': 'weniger als 30% der Unternehmen im Baugewerbe nutzen moderne Cloudlösungen',
+    'problem.stat3Value': '< 30%',
     
     // Solution Section
     'solution.title': 'Aktueller Status: Wir liefern AI-gestützte Effizienz schon heute.',
@@ -143,8 +146,11 @@ const translations = {
     // Problem Section
     'problem.title': '47 Billion Euros Wasted: The Hidden Cost Factor in Construction.',
     'problem.stat1': 'Loss per year in the German construction industry',
+    'problem.stat1Value': '47 Billion €',
     'problem.stat2': 'Hours of time lost per team/day on documentation',
+    'problem.stat2Value': '3+',
     'problem.stat3': 'less than 30% of construction companies use modern cloud solutions',
+    'problem.stat3Value': '< 30%',
     
     // Solution Section
     'solution.title': 'Current Status: We Deliver AI-Powered Efficiency Today.',
