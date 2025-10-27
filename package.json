@@ -1,8 +1,8 @@
 {
   "name": "vite_react_shadcn_ts",
-  "homepage": "https://Jeske-dev.github.io/edgecrew-voice-pilot/",
+  "homepage": "https://Jeske-dev.github.io/edgecrew-voice-pilot",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
