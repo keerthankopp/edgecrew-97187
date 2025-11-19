@@ -63,11 +63,19 @@ extract: { "email": "john@example.com", "subject": "Meeting Tomorrow", "body": "
     }
 
     const aiData = await aiResponse.json();
-    const content = aiData.choices[0].message.content;
+    let content = aiData.choices[0].message.content;
     console.log('AI response:', content);
 
+    // Strip markdown code blocks if present
+    content = content.trim();
+    if (content.startsWith('```json')) {
+      content = content.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+    } else if (content.startsWith('```')) {
+      content = content.replace(/^```\n?/, '').replace(/\n?```$/, '');
+    }
+
     // Parse the JSON response
-    const emailData = JSON.parse(content);
+    const emailData = JSON.parse(content.trim());
     
     if (!emailData.email) {
       throw new Error('Could not extract email address from command');
