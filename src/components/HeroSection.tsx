@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-construction.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 const HeroSection = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
+  const navigate = useNavigate();
+  
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({
       behavior: 'smooth'
@@ -33,9 +34,22 @@ const HeroSection = () => {
             {t('hero.subtitle')}
           </p>
 
-          {/* CTA Button */}
-          <div className="pt-8">
-            <Button variant="cta" size="lg" onClick={scrollToContact} className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap my-0 py-[32px]">
+          {/* CTA Buttons */}
+          <div className="pt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={() => navigate('/demo')}
+              className="animate-pulse hover:animate-none md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap my-0 py-[32px]"
+            >
+              {t('hero.tryNow')}
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              onClick={scrollToContact}
+              className="md:text-lg md:px-8 md:py-6 whitespace-normal md:whitespace-nowrap my-0 py-[32px] border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
               {t('hero.cta')}
             </Button>
           </div>

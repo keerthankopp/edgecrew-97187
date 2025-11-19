@@ -22,9 +22,21 @@ const translations = {
     'hero.title': 'EdgeCrew ist der sprachgesteuerte KI-Assistent, der Echtzeit-Klarheit auf Baustellen bringt.',
     'hero.subtitle': 'Sparen Sie 3+ Stunden täglich. EdgeCrew ist der DSGVO-konforme, sprachgesteuerte KI-Assistent, der jedes Bau-Telefonat automatisch dokumentiert.',
     'hero.cta': 'Jetzt Demo buchen',
+    'hero.tryNow': 'Jetzt ausprobieren',
     'hero.trust1': '100% DSGVO-konform',
     'hero.trust2': 'Lokale Datenverarbeitung',
     'hero.trust3': 'Sofort einsatzbereit',
+    
+    // Demo Page
+    'demo.back': 'Zurück zur Startseite',
+    'demo.title': 'Voice Assistant Demo',
+    'demo.description': 'Drücken Sie den Button, sprechen Sie Ihren Befehl und erleben Sie die Zukunft der Bau-Kommunikation.',
+    'demo.example': 'Beispiel: "Sende eine E-Mail an beispiel@gmail.com für einen Baustellentermin am 11.12.2025"',
+    'demo.startRecording': 'Aufnahme starten',
+    'demo.stopRecording': 'Aufnahme beenden',
+    'demo.processing': 'Wird verarbeitet...',
+    'demo.transcript': 'Ihre Nachricht',
+    'demo.result': 'Ergebnis',
     
     // Problem Section
     'problem.title': '47 Milliarden Euro verschwendet: Der verborgene Kostenfaktor auf dem Bau.',
@@ -139,9 +151,21 @@ const translations = {
     'hero.title': 'EdgeCrew is the voice-first AI assistant that brings real-time clarity to construction sites.',
     'hero.subtitle': 'Save 3+ hours daily. EdgeCrew is the GDPR-compliant, voice-controlled AI assistant that automatically documents every construction call.',
     'hero.cta': 'Book demo now',
+    'hero.tryNow': 'Try now',
     'hero.trust1': '100% GDPR Compliant',
     'hero.trust2': 'Local Data Processing',
     'hero.trust3': 'Ready to Use',
+    
+    // Demo Page
+    'demo.back': 'Back to Home',
+    'demo.title': 'Voice Assistant Demo',
+    'demo.description': 'Press the button, speak your command, and experience the future of construction communication.',
+    'demo.example': 'Example: "Send an email to example@gmail.com for a site visit on 11.12.2025"',
+    'demo.startRecording': 'Start Recording',
+    'demo.stopRecording': 'Stop Recording',
+    'demo.processing': 'Processing...',
+    'demo.transcript': 'Your Message',
+    'demo.result': 'Result',
     
     // Problem Section
     'problem.title': '47 Billion Euros Wasted: The Hidden Cost Factor in Construction.',
