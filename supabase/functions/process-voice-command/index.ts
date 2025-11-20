@@ -100,10 +100,15 @@ extract: { "email": "john@example.com", "subject": "Meeting Tomorrow", "body": "
 
     console.log('Sending email to:', emailData.email);
 
+    // DEMO MODE: Resend test address can only send to registered email
+    // For production, verify your domain at resend.com/domains
+    const demoEmail = 'keerthankr123@gmail.com'; // Your registered Resend email
+    console.log('Demo mode: Redirecting to registered email:', demoEmail);
+
     // Send the email using resend
     const emailPayload = {
       from: 'EdgeCrew Demo <onboarding@resend.dev>',
-      to: [emailData.email],
+      to: [demoEmail], // Using demo email instead of extracted email
       subject: emailData.subject || 'Message from Voice Assistant',
       html: `
         <html>
@@ -143,9 +148,10 @@ extract: { "email": "john@example.com", "subject": "Meeting Tomorrow", "body": "
 
     return new Response(
       JSON.stringify({ 
-        message: `Email successfully sent to ${emailData.email}!`,
+        message: `Email successfully sent! (Demo mode: sent to ${demoEmail} instead of ${emailData.email})`,
         details: {
-          recipient: emailData.email,
+          requestedRecipient: emailData.email,
+          actualRecipient: demoEmail,
           subject: emailData.subject,
         }
       }),
