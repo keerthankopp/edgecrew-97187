@@ -53,9 +53,15 @@ Extract the following information from the user's command:
 2. Subject
 3. Body content
 
+CRITICAL EMAIL EXTRACTION RULES:
+- If the user says "at" (e.g., "john at gmail.com"), convert it to "@" (john@gmail.com)
+- If the user says "dot" (e.g., "gmail dot com"), convert it to "." (gmail.com)
+- The email MUST be in valid format: username@domain.com
+- Always ensure the @ symbol is present in the email address
+
 Return ONLY a JSON object with these fields: { "email": "string", "subject": "string", "body": "string" }.
 If any information is missing, use reasonable defaults.
-For example, if the user says "Send an email to john@example.com about meeting tomorrow", 
+For example, if the user says "Send an email to john at example dot com about meeting tomorrow", 
 extract: { "email": "john@example.com", "subject": "Meeting Tomorrow", "body": "Hello,\n\nI wanted to reach out regarding our meeting scheduled for tomorrow.\n\nBest regards" }`
           },
           {
