@@ -1,11 +1,13 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { Mic, MicOff, Loader2, Mail, ArrowLeft } from "lucide-react";
+import { Mic, MicOff, Loader2, Mail, ArrowLeft, CheckCircle, XCircle, Edit } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
 
 const Demo = () => {
   const { t } = useLanguage();
@@ -14,9 +16,81 @@ const Demo = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
   const [transcript, setTranscript] = useState("");
+  const [emailData, setEmailData] = useState<{recipient: string; subject: string; body: string} | null>(null);
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const [isEditing, setIsEditing] = useState(false);
   const [result, setResult] = useState("");
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const audioChunksRef = useRef<Blob[]>([]);
+  const countdownTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+
+  useEffect(() => {
+    return () => {
+      if (countdownTimerRef.current) {
+        clearInterval(countdownTimerRef.current);
+      }
+    };
+  }, []);
+
+  const startCountdown = (data: {recipient: string; subject: string; body: string}) => {
+    setCountdown(5);
+    let timeLeft = 5;
+    
+    countdownTimerRef.current = setInterval(() => {
+      timeLeft -= 1;
+      setCountdown(timeLeft);
+      
+      if (timeLeft === 0) {
+        if (countdownTimerRef.current) {
+          clearInterval(countdownTimerRef.current);
+        }
+        sendEmail(data);
+      }
+    }, 1000);
+  };
+
+  const cancelSend = () => {
+    if (countdownTimerRef.current) {
+      clearInterval(countdownTimerRef.current);
+      countdownTimerRef.current = null;
+    }
+    setCountdown(null);
+    setIsEditing(true);
+  };
+
+  const sendEmail = async (data: {recipient: string; subject: string; body: string}) => {
+    setIsProcessing(true);
+    setCountdown(null);
+    
+    try {
+      const { data: sendData, error: sendError } = await supabase.functions.invoke(
+        "send-email",
+        {
+          body: data,
+        }
+      );
+
+      if (sendError) {
+        throw new Error(sendError.message);
+      }
+
+      setResult(sendData.message);
+      toast({
+        title: "Success!",
+        description: sendData.message,
+      });
+    } catch (error: any) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Failed to send email",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
+  };
 
   const startRecording = async () => {
     try {
@@ -40,7 +114,13 @@ const Demo = () => {
       mediaRecorder.start();
       setIsRecording(true);
       setTranscript("");
+      setEmailData(null);
       setResult("");
+      setCountdown(null);
+      setIsEditing(false);
+      if (countdownTimerRef.current) {
+        clearInterval(countdownTimerRef.current);
+      }
     } catch (error) {
       console.error("Error accessing microphone:", error);
       toast({
@@ -82,7 +162,7 @@ const Demo = () => {
         const transcribedText = transcribeData.text;
         setTranscript(transcribedText);
 
-        // Step 2: Process command and send email
+        // Step 2: Extract email details
         const { data: processData, error: processError } = await supabase.functions.invoke(
           "process-voice-command",
           {
@@ -94,11 +174,8 @@ const Demo = () => {
           throw new Error(processError.message);
         }
 
-        setResult(processData.message);
-        toast({
-          title: "Success!",
-          description: processData.message,
-        });
+        setEmailData(processData.emailData);
+        startCountdown(processData.emailData);
       };
     } catch (error: any) {
       console.error("Error processing audio:", error);
@@ -185,10 +262,114 @@ const Demo = () => {
             </div>
           )}
 
+          {emailData && !result && (
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <h3 className="font-semibold flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  Message Preview
+                </h3>
+                {countdown !== null && !isEditing && (
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-muted-foreground">
+                      Sending in {countdown}s
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={cancelSend}
+                    >
+                      <XCircle className="h-4 w-4 mr-2" />
+                      Cancel
+                    </Button>
+                  </div>
+                )}
+              </div>
+              
+              <Card className="p-4 bg-accent/10 border-accent space-y-4">
+                {isEditing ? (
+                  <>
+                    <div>
+                      <label className="text-sm font-medium mb-1 block">To:</label>
+                      <Input
+                        value={emailData.recipient}
+                        onChange={(e) => setEmailData({ ...emailData, recipient: e.target.value })}
+                        className="bg-background"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-1 block">Subject:</label>
+                      <Input
+                        value={emailData.subject}
+                        onChange={(e) => setEmailData({ ...emailData, subject: e.target.value })}
+                        className="bg-background"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-1 block">Message:</label>
+                      <Textarea
+                        value={emailData.body}
+                        onChange={(e) => setEmailData({ ...emailData, body: e.target.value })}
+                        className="bg-background min-h-[120px]"
+                      />
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        variant="cta"
+                        onClick={() => sendEmail(emailData)}
+                        disabled={isProcessing}
+                      >
+                        {isProcessing ? (
+                          <>
+                            <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                            Sending...
+                          </>
+                        ) : (
+                          <>
+                            <CheckCircle className="h-4 w-4 mr-2" />
+                            Send Now
+                          </>
+                        )}
+                      </Button>
+                      <Button
+                        variant="outline"
+                        onClick={() => {
+                          setEmailData(null);
+                          setIsEditing(false);
+                        }}
+                      >
+                        Cancel
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="space-y-2">
+                      <p className="text-sm"><strong>To:</strong> {emailData.recipient}</p>
+                      <p className="text-sm"><strong>Subject:</strong> {emailData.subject}</p>
+                      <p className="text-sm"><strong>Message:</strong></p>
+                      <p className="text-sm whitespace-pre-wrap">{emailData.body}</p>
+                    </div>
+                    {countdown === null && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setIsEditing(true)}
+                      >
+                        <Edit className="h-4 w-4 mr-2" />
+                        Edit
+                      </Button>
+                    )}
+                  </>
+                )}
+              </Card>
+            </div>
+          )}
+
           {result && (
             <div className="space-y-2">
               <h3 className="font-semibold flex items-center gap-2 text-primary">
-                <Mail className="h-4 w-4" />
+                <CheckCircle className="h-4 w-4" />
                 {t('demo.result')}
               </h3>
               <Card className="p-4 bg-accent/10 border-accent">
