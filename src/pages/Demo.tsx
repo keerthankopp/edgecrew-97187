@@ -367,7 +367,7 @@ const Demo = () => {
                       <p className="text-sm"><strong>Message:</strong></p>
                       <p className="text-sm whitespace-pre-wrap">{emailData.body}</p>
                     </div>
-                    {countdown === null && (
+                    {countdown !== null && (
                       <Button
                         variant="outline"
                         size="sm"
