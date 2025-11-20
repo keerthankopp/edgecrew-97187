@@ -197,6 +197,29 @@ const Demo = () => {
             </div>
           )}
         </Card>
+
+        {/* CTA Section */}
+        {result && (
+          <Card className="p-8 mt-8 bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
+            <div className="text-center space-y-4">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Like What You Experienced?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                This is just a glimpse of EdgeCrew's capabilities. Sign up for our pilot program 
+                to unlock the full suite of features and revolutionize your construction site management.
+              </p>
+              <Button
+                variant="cta"
+                size="xl"
+                onClick={() => navigate("/#contact")}
+                className="mt-4"
+              >
+                Join the Pilot Program
+              </Button>
+            </div>
+          </Card>
+        )}
       </div>
     </div>
   );
