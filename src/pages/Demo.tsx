@@ -45,12 +45,25 @@ const Demo = () => {
         if (countdownTimerRef.current) {
           clearInterval(countdownTimerRef.current);
         }
-        sendEmail(data);
+        // Only auto-send if not in editing mode
+        if (!isEditing) {
+          sendEmail(data);
+        }
       }
     }, 1000);
   };
 
   const cancelSend = () => {
+    if (countdownTimerRef.current) {
+      clearInterval(countdownTimerRef.current);
+      countdownTimerRef.current = null;
+    }
+    setCountdown(null);
+    setIsEditing(true);
+  };
+
+  const handleEdit = () => {
+    // Stop countdown when user clicks edit
     if (countdownTimerRef.current) {
       clearInterval(countdownTimerRef.current);
       countdownTimerRef.current = null;
@@ -316,7 +329,10 @@ const Demo = () => {
                     <div className="flex gap-2">
                       <Button
                         variant="cta"
-                        onClick={() => sendEmail(emailData)}
+                        onClick={() => {
+                          setIsEditing(false);
+                          sendEmail(emailData);
+                        }}
                         disabled={isProcessing}
                       >
                         {isProcessing ? (
@@ -327,7 +343,7 @@ const Demo = () => {
                         ) : (
                           <>
                             <CheckCircle className="h-4 w-4 mr-2" />
-                            Send Now
+                            Confirm & Send
                           </>
                         )}
                       </Button>
@@ -337,6 +353,7 @@ const Demo = () => {
                           setEmailData(null);
                           setIsEditing(false);
                         }}
+                        disabled={isProcessing}
                       >
                         Cancel
                       </Button>
@@ -354,7 +371,7 @@ const Demo = () => {
                       <Button
                         variant="outline"
                         size="sm"
-                        onClick={() => setIsEditing(true)}
+                        onClick={handleEdit}
                       >
                         <Edit className="h-4 w-4 mr-2" />
                         Edit
