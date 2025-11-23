@@ -35,6 +35,13 @@ serve(async (req) => {
 
     console.log('Processing command:', command);
 
+    // Contact mappings for quick access
+    const contactMappings: Record<string, string> = {
+      'aboud': 'Aboud.Mouakket@yeti-leipzig.org',
+      'keerthan': 'keerthankr@gmail.com',
+      'kirtan': 'keerthankr@gmail.com',
+    };
+
     // Use Lovable AI to extract email details from the command
     const aiResponse = await fetch('https://ai.gateway.lovable.dev/v1/chat/completions', {
       method: 'POST',
@@ -96,6 +103,16 @@ extract: { "email": "john@example.com", "subject": "Meeting Tomorrow", "body": "
     
     if (!emailData.email) {
       throw new Error('Could not extract email address from command');
+    }
+
+    // Check if the extracted email matches any contact names
+    const emailLower = emailData.email.toLowerCase();
+    for (const [name, email] of Object.entries(contactMappings)) {
+      if (emailLower.includes(name)) {
+        console.log(`Mapped contact "${name}" to ${email}`);
+        emailData.email = email;
+        break;
+      }
     }
 
     console.log('Extracted email data:', emailData);
