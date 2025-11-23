@@ -41,6 +41,7 @@ serve(async (req) => {
       'abodh': 'Aboud.Mouakket@yeti-leipzig.org',
       'abood': 'Aboud.Mouakket@yeti-leipzig.org',
       'aboodh': 'Aboud.Mouakket@yeti-leipzig.org',
+      'abuth': 'Aboud.Mouakket@yeti-leipzig.org',
       'keerthan': 'keerthankr@gmail.com',
       'kirtan': 'keerthankr@gmail.com',
     };
@@ -70,7 +71,7 @@ CRITICAL EMAIL EXTRACTION RULES:
 - Always ensure the @ symbol is present in the email address
 
 CRITICAL NAME NORMALIZATION RULES:
-- If the command mentions "Aboud", "Abood", "Abodh" or "Aboodh", always write "Aboud" in the email body
+- If the command mentions "Aboud", "Abood", "Abodh", "Aboodh", or "Abuth", always write "Aboud" in the email body
 - If the command mentions "Keerthan" or "Kirtan", always write "Keerthan" in the email body
 - Use the proper spelling of names in the email content, subject, and body
 
