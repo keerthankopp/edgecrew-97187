@@ -68,6 +68,11 @@ CRITICAL EMAIL EXTRACTION RULES:
 - The email MUST be in valid format: username@domain.com
 - Always ensure the @ symbol is present in the email address
 
+CRITICAL NAME NORMALIZATION RULES:
+- If the command mentions "Aboud", "Abood", or "Aboodh", always write "Aboud" in the email body
+- If the command mentions "Keerthan" or "Kirtan", always write "Keerthan" in the email body
+- Use the proper spelling of names in the email content, subject, and body
+
 Return ONLY a JSON object with these fields: { "email": "string", "subject": "string", "body": "string" }.
 If any information is missing, use reasonable defaults.
 For example, if the user says "Send an email to john at example dot com about meeting tomorrow", 
