@@ -38,6 +38,8 @@ serve(async (req) => {
     // Contact mappings for quick access
     const contactMappings: Record<string, string> = {
       'aboud': 'Aboud.Mouakket@yeti-leipzig.org',
+      'abood': 'Aboud.Mouakket@yeti-leipzig.org',
+      'aboodh': 'Aboud.Mouakket@yeti-leipzig.org',
       'keerthan': 'keerthankr@gmail.com',
       'kirtan': 'keerthankr@gmail.com',
     };
